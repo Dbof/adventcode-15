@@ -4,6 +4,10 @@ dic = defaultdict(dict)
 cities = set()
 
 def find_way(graph, cities, from_city, visited):
+    """ 
+    Find the shortest path using a recursive algorithm. 
+    You could speed this up with a cache.
+    """
     if len(visited) == len(cities):
         return 0
 
@@ -28,4 +32,5 @@ with open('input.txt') as f:
         dic[fr][to] = distance
         dic[to][fr] = distance 
 
+# print out the minimum distance
 print(min([find_way(dic, cities, city, [city]) for city in cities]))

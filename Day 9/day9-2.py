@@ -4,10 +4,14 @@ dic = defaultdict(dict)
 cities = set()
 
 def find_way(graph, cities, from_city, visited):
+    """ 
+    Find the longest path using a recursive algorithm. 
+    You could speed this up with a cache.
+    """
     if len(visited) == len(cities):
         return 0
 
-    cost = -10**10 # arbitrary high number
+    cost = -10**10 # arbitrary low number
     for to_city in cities:
         if from_city == to_city or to_city in visited:
             continue
@@ -28,4 +32,5 @@ with open('input.txt') as f:
         dic[fr][to] = distance
         dic[to][fr] = distance 
 
+# print maximum distance
 print(max([find_way(dic, cities, city, [city]) for city in cities]))
