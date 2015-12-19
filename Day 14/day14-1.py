@@ -1,4 +1,4 @@
-
+# calculate distance with simple math
 
 def calc_distance(name, time):
     speed, fly, rest = reindeers[name]
