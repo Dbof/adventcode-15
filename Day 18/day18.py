@@ -63,11 +63,11 @@ print(count_lights_on(lights))
 
 # part 2 #
 lights = backup
-lights[0][0] = lights[0][99] = lights[99][0] = lights[99][99] = True
+lights[0][0] = lights[0][-1] = lights[-1][0] = lights[-1][-1] = True
 print('Starting with:', count_lights_on(lights))
 for i in range(1, 100+1):
     lights = update_lights(lights)
     # set corners manually
-    lights[0][0] = lights[0][99] = lights[99][0] = lights[99][99] = True
+    lights[0][0] = lights[0][-1] = lights[-1][0] = lights[-1][-1] = True
 
 print(count_lights_on(lights))
